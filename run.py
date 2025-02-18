@@ -1,4 +1,4 @@
 if __name__ == "__main__":
-    from src.say_hello import say_hello
+    from src.main.server import app
 
-    say_hello()
+    app.run(host="0.0.0.0", port=3000, debug=True)
