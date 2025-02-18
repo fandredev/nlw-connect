@@ -10,6 +10,7 @@
 - [asdf](https://asdf-vm.com/)
 - [pip](https://pypi.org/project/pip/)
 - [pytest](https://docs.pytest.org/en/stable/)
+- [SQLAlchemy](https://www.sqlalchemy.org/)
 
 ## Clone this repo
 
