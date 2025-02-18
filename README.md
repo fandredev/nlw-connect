@@ -2,7 +2,7 @@
 
 # Stack used
 
-<img src="https://skillicons.dev/icons?i=python,flask,git,vscode,sqlite&theme=dark" alt="python,flask,git,vscode,sqlite" />
+<img src="https://skillicons.dev/icons?i=python,flask,git,vscode,sqlite,postman&theme=dark" alt="python,flask,git,vscode,sqlite" />
 
 ### Other tools:
 
