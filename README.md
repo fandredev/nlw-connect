@@ -47,18 +47,6 @@ git clone git@github.com:fandredev/nlw-connect.git
  yarn run coverage
 ```
 
-## Run linter
-
-```
- yarn run lint
-```
-
-## Run UI components
-
-```
- yarn run storybook
-```
-
 ## :mailbox_with_no_mail: Contacts
 
 E-mail: profissionalf.andre@gmail.com<br>
