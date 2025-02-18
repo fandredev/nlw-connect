@@ -36,7 +36,7 @@ git clone git@github.com:fandredev/nlw-connect.git
  pip install -r requirements.txt
 ```
 
-## Run tests
+## Run integration tests
 
 ```
  pytest
@@ -58,4 +58,4 @@ Blog: https://medium.com/@thistate<br>
 
 # References
 
-- [Rocketseat](https://www.rocketseat.com.br/3)
+- [Rocketseat](https://www.rocketseat.com.br/)
