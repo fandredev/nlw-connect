@@ -1,6 +1,7 @@
 from ..subscribers_repository import SubscribersRepository
 
 import unittest
+import pytest
 
 
 @pytest.mark.skip(reason="This test will create an event in the database")

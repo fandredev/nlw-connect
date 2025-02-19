@@ -1,9 +1,12 @@
+from src.models.repositories.interfaces.subscribers_repository import (
+    SubscribersRepositoryInterface,
+)
 from src.models.configs.connection import DBConnectionHandler
 from src.models.entities.subscriptions import Subscriptions
 from typing import Dict
 
 
-class SubscribersRepository:
+class SubscribersRepository(SubscribersRepositoryInterface):
     def insert_subscriber(self, susbcriber_infos: Dict) -> None:
         with DBConnectionHandler() as db_connection:
             try:
