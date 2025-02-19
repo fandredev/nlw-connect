@@ -11,6 +11,7 @@
 - [pip](https://pypi.org/project/pip/)
 - [pytest](https://docs.pytest.org/en/stable/)
 - [SQLAlchemy](https://www.sqlalchemy.org/)
+- [Cerberus](https://docs.python-cerberus.org/)
 
 ## Clone this repo
 
@@ -40,6 +41,12 @@ git clone git@github.com:fandredev/nlw-connect.git
 
 ```
  pytest
+```
+
+## Run server
+
+```
+ python run.py
 ```
 
 ## :mailbox_with_no_mail: Contacts
