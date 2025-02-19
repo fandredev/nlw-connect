@@ -25,8 +25,7 @@ jobs:
           pip install -r requirements.txt
       - name: Run Tests
         run: |
-          pytest -m 'not functional' --cov=recipes .
-
+          pytest
       - name: Run Coverage Pytest
         run: |
           pytest --cov
