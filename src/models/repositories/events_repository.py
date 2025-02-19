@@ -17,7 +17,7 @@ class EventsRepository(EventsRepositoryInterface):
                 db_connection.session.rollback()
                 raise e
 
-    def select_event(self, event_name: str):
+    def select_event(self, event_name: str) -> Events:
         with DBConnectionHandler() as db_connection:
             event = (
                 db_connection.session.query(Events)
