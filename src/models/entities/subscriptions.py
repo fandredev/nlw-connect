@@ -3,10 +3,10 @@ from sqlalchemy import Column, Integer, String, ForeignKey
 
 
 class Subscriptions(Base):
-    __tablename__ = "Inscrições"
+    __tablename__ = "Subscriptions"
 
     id = Column(Integer, primary_key=True, autoincrement=True)
     nome = Column(String, nullable=False)
     email = Column(String, nullable=False)
     link = Column(String, nullable=True)
-    evento_id = Column(Integer, ForeignKey("Eventos.id"), nullable=False)
+    event_id = Column(Integer, ForeignKey("Events.id"), nullable=False)

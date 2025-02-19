@@ -7,6 +7,7 @@ CREATE table Subscriptions (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   nome TEXT NOT NULL,
   email TEXT NOT NULL,
+  link TEXT,
   event_id INTEGER NOT NULL,
   FOREIGN KEY (event_id) REFERENCES Events(id) ON DELETE CASCADE ON UPDATE CASCADE
 )

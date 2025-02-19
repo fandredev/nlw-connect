@@ -42,12 +42,6 @@ git clone git@github.com:fandredev/nlw-connect.git
  pytest
 ```
 
-## Run coverage
-
-```
- yarn run coverage
-```
-
 ## :mailbox_with_no_mail: Contacts
 
 E-mail: profissionalf.andre@gmail.com<br>
