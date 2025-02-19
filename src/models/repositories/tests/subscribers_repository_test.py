@@ -34,3 +34,9 @@ class SubscribersRepositoryTest(unittest.TestCase):
         assert subscriber.email == subscriber_info["email"]
         assert subscriber.event_id == subscriber_info["event_id"]
         assert subscriber.name == subscriber_info["name"]
+
+    def test_ranking(self):
+        event_id = 1
+        ranking = self.subscribers_repository.get_ranking(event_id)
+        assert ranking[0].link is not None
+        assert ranking[0].count == 1
