@@ -33,4 +33,4 @@ class SubscribersRepositoryTest(unittest.TestCase):
 
         assert subscriber.email == subscriber_info["email"]
         assert subscriber.event_id == subscriber_info["event_id"]
-        assert subscriber.nome == subscriber_info["name"]
+        assert subscriber.name == subscriber_info["name"]

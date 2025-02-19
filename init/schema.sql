@@ -1,11 +1,11 @@
 CREATE table Events (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
-  nome TEXT NOT NULL
+  name TEXT NOT NULL
 )
 
 CREATE table Subscriptions (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
-  nome TEXT NOT NULL,
+  name TEXT NOT NULL,
   email TEXT NOT NULL,
   link TEXT,
   event_id INTEGER NOT NULL,

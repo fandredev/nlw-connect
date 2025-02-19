@@ -17,4 +17,4 @@ class EventsRepositoryTest(unittest.TestCase):
 
         event = self.events_repository.select_event(event_name)
 
-        assert event.nome == event_name
+        assert event.name == event_name

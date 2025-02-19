@@ -6,4 +6,4 @@ class Events(Base):
     __tablename__ = "Events"
 
     id = Column(Integer, primary_key=True, autoincrement=True)
-    nome = Column(String, nullable=False)
+    name = Column(String, nullable=False)

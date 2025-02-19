@@ -11,7 +11,7 @@ class SubscribersRepository(SubscribersRepositoryInterface):
         with DBConnectionHandler() as db_connection:
             try:
                 new_subscriber = Subscriptions(
-                    nome=susbcriber_infos.get("name"),
+                    name=susbcriber_infos.get("name"),
                     email=susbcriber_infos.get("email"),
                     link=susbcriber_infos.get("link"),
                     event_id=susbcriber_infos.get("event_id"),
