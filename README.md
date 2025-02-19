@@ -1,5 +1,8 @@
 ## NLW Connect: :technologist:
 
+I created with <a href="https://www.rocketseat.com.br/">Rocketseat</a> an application in Python from scratch, and you will learn about the main tools of the language that we use in the market today. We will work with a practical approach and understand the concepts that encompass the fundamentals applied in the project. We will develop an API for event registration, allowing you to manage events and their subscribers efficiently, with creation, update and data control operations. In this track, we will work with Flask, which will allow us to create the API, Postman to test and validate our routes. We will use SQLAlchemy to deal with databases and we will use Pytest, a library for creating automated tests.
+
+
 # Stack used
 
 <img src="https://skillicons.dev/icons?i=python,flask,git,vscode,sqlite,postman&theme=dark" alt="python,flask,git,vscode,sqlite" />
@@ -7,7 +10,6 @@
 ### Other tools:
 
 - [dbeaver](https://dbeaver.io/)
-- [asdf](https://asdf-vm.com/)
 - [pip](https://pypi.org/project/pip/)
 - [pytest](https://docs.pytest.org/en/stable/)
 - [SQLAlchemy](https://www.sqlalchemy.org/)
