@@ -45,6 +45,17 @@ git clone git@github.com:fandredev/nlw-connect.git
  pytest
 ```
 
+## Run coverage HTML
+
+```
+ coverage html
+```
+## Run coverage Report
+
+```
+ coverage report
+```
+
 ## Run server
 
 ```
