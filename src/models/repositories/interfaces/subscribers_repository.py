@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 from src.models.configs.connection import DBConnectionHandler
 from src.models.entities.subscriptions import Subscriptions
-from typing import Dict
+from typing import Dict, Tuple, List
 
 
 class SubscribersRepositoryInterface(ABC):

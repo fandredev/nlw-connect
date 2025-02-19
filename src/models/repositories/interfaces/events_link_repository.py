@@ -4,7 +4,7 @@ from src.models.entities.events_link import EventsLink
 
 class EventsLinkRepositoryInterface(ABC):
     @abstractmethod
-    def insert(self, event_name: str) -> None:
+    def insert(self, event_id: int, subscription_id: int) -> None:
         pass
 
     @abstractmethod
