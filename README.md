@@ -39,6 +39,12 @@ git clone git@github.com:fandredev/nlw-connect.git
  pip install -r requirements.txt
 ```
 
+## Create a database
+
+You need to create a three tables in sqlite (using dbeaver or no) to run this project. Please, read the init/schema.sql to understand the sql commands to create your own database.
+
+![alt text](readme-images/database.png)
+
 ## Run integration tests
 
 ```
@@ -61,6 +67,11 @@ git clone git@github.com:fandredev/nlw-connect.git
 ```
  python run.py
 ```
+
+
+##### **Notes**: Use the 'NLW Connect.postman_collection.json' file to see routes and requests.
+
+![Preview Collection Postman](readme-images/collection_postman.png)
 
 ## :mailbox_with_no_mail: Contacts
 

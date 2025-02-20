@@ -1,0 +1,605 @@
+{
+	"info": {
+		"_postman_id": "f93fe845-35c0-4c82-98fb-8fcfe03b18bd",
+		"name": "NLW Connect",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7059246"
+	},
+	"item": [
+		{
+			"name": "Events",
+			"item": [
+				{
+					"name": "Events Link",
+					"item": [
+						{
+							"name": "Create new Event Link",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"data\": {\n        \"event_id\":1,\n        \"subscriber_id\": 1\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_URL}}/events_link",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"events_link"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Create Event",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var template = `",
+									"<canvas id=\"lineChart\" height=\"75\"></canvas>",
+									"",
+									"<script src=\"https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js\"></script> ",
+									"",
+									"<script>",
+									"    var ctx = document.getElementById(\"lineChart\");",
+									"",
+									"    var lineChart = new Chart(ctx, {",
+									"        type: \"line\",",
+									"        data: {",
+									"            labels: [],",
+									"            datasets: [{",
+									"                data: [],",
+									"                ",
+									"                // Change these colours to customize the chart",
+									"                backgroundColor: \"rgba(75, 192, 192, 0.2)\",",
+									"                borderColor: \"rgba(75, 192, 192, 1)\",",
+									"                borderWidth: 1",
+									"            }]",
+									"        },",
+									"        options: {",
+									"            legend: { display: false },",
+									"            title: {",
+									"                display: true,",
+									"                text: 'Response Data Over Time'",
+									"            },",
+									"            scales: {",
+									"                xAxes: [{",
+									"                    display: true,",
+									"                    scaleLabel: {",
+									"                        display: true,",
+									"                        labelString: 'Time'",
+									"                    }",
+									"                }],",
+									"                yAxes: [{",
+									"                    display: true,",
+									"                    scaleLabel: {",
+									"                        display: true,",
+									"                        labelString: 'Value'",
+									"                    }",
+									"                }]",
+									"            }",
+									"        }",
+									"",
+									"    });",
+									"",
+									"    // Access the data passed to pm.visualizer.set() from the JavaScript",
+									"    // code of the Visualizer template",
+									"    pm.getData(function (err, value) {",
+									"        lineChart.data.datasets[0].data = value.response.data;",
+									"        lineChart.data.labels = value.response.labels;",
+									"        lineChart.update();",
+									"    });",
+									"",
+									"</script>`;",
+									"",
+									"function constructVisualizerPayload() {",
+									"    var res = pm.response.json();",
+									"    ",
+									"    var visualizerData = {",
+									"        ",
+									"        // Labels take an array of strings",
+									"        labels: [], // Add the labels data here",
+									"        ",
+									"        // Data takes an array of numbers",
+									"        data: [] // Add the data values here",
+									"    };",
+									"",
+									"    return {response: visualizerData};",
+									"}",
+									"",
+									"pm.visualizer.set(template, constructVisualizerPayload());"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data\": {\n        \"name\": \"Event Rocket 3\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/event",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"event"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Subscribers",
+			"item": [
+				{
+					"name": "Create Subscriber",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var template = `",
+									"<canvas id=\"lineChart\" height=\"75\"></canvas>",
+									"",
+									"<script src=\"https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js\"></script> ",
+									"",
+									"<script>",
+									"    var ctx = document.getElementById(\"lineChart\");",
+									"",
+									"    var lineChart = new Chart(ctx, {",
+									"        type: \"line\",",
+									"        data: {",
+									"            labels: [],",
+									"            datasets: [{",
+									"                data: [],",
+									"                ",
+									"                // Change these colours to customize the chart",
+									"                backgroundColor: \"rgba(75, 192, 192, 0.2)\",",
+									"                borderColor: \"rgba(75, 192, 192, 1)\",",
+									"                borderWidth: 1",
+									"            }]",
+									"        },",
+									"        options: {",
+									"            legend: { display: false },",
+									"            title: {",
+									"                display: true,",
+									"                text: 'Response Data Over Time'",
+									"            },",
+									"            scales: {",
+									"                xAxes: [{",
+									"                    display: true,",
+									"                    scaleLabel: {",
+									"                        display: true,",
+									"                        labelString: 'Time'",
+									"                    }",
+									"                }],",
+									"                yAxes: [{",
+									"                    display: true,",
+									"                    scaleLabel: {",
+									"                        display: true,",
+									"                        labelString: 'Value'",
+									"                    }",
+									"                }]",
+									"            }",
+									"        }",
+									"",
+									"    });",
+									"",
+									"    // Access the data passed to pm.visualizer.set() from the JavaScript",
+									"    // code of the Visualizer template",
+									"    pm.getData(function (err, value) {",
+									"        lineChart.data.datasets[0].data = value.response.data;",
+									"        lineChart.data.labels = value.response.labels;",
+									"        lineChart.update();",
+									"    });",
+									"",
+									"</script>`;",
+									"",
+									"function constructVisualizerPayload() {",
+									"    var res = pm.response.json();",
+									"    ",
+									"    var visualizerData = {",
+									"        ",
+									"        // Labels take an array of strings",
+									"        labels: [], // Add the labels data here",
+									"        ",
+									"        // Data takes an array of numbers",
+									"        data: [] // Add the data values here",
+									"    };",
+									"",
+									"    return {response: visualizerData};",
+									"}",
+									"",
+									"pm.visualizer.set(template, constructVisualizerPayload());",
+									"",
+									"pm.test(\"Response status code is 201\", function () {",
+									"  pm.expect(pm.response.code).to.equal(201);",
+									"});",
+									"",
+									"",
+									"pm.test(\"Email is in a valid format\", function () {",
+									"  const responseData = pm.response.json();",
+									"  ",
+									"  pm.expect(responseData.data.attributes.email).to.be.a('string').and.to.match(/^.+@.+\\..+$/);",
+									"});",
+									"",
+									"",
+									"pm.test(\"Event_id is a non-negative integer\", function () {",
+									"    const responseData = pm.response.json();",
+									"",
+									"    pm.expect(responseData.data.attributes.event_id).to.be.a('number').and.to.be.at.least(0);",
+									"});",
+									"",
+									"",
+									"pm.test(\"Response time is in an acceptable range\", function () {",
+									"  pm.expect(pm.response.responseTime).to.be.below(300);",
+									"});",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data\": {\n        \"name\":\"Felipe\",\n        \"link\":\"https://www.google.com.br/?hl=pt-BR\",\n        \"email\": \"fel1e@gmail.com\",\n        \"event_id\": 1\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/subscriber",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"subscriber"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Subscriber by Link",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var template = `",
+									"<canvas id=\"lineChart\" height=\"75\"></canvas>",
+									"",
+									"<script src=\"https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js\"></script> ",
+									"",
+									"<script>",
+									"    var ctx = document.getElementById(\"lineChart\");",
+									"",
+									"    var lineChart = new Chart(ctx, {",
+									"        type: \"line\",",
+									"        data: {",
+									"            labels: [],",
+									"            datasets: [{",
+									"                data: [],",
+									"                ",
+									"                // Change these colours to customize the chart",
+									"                backgroundColor: \"rgba(75, 192, 192, 0.2)\",",
+									"                borderColor: \"rgba(75, 192, 192, 1)\",",
+									"                borderWidth: 1",
+									"            }]",
+									"        },",
+									"        options: {",
+									"            legend: { display: false },",
+									"            title: {",
+									"                display: true,",
+									"                text: 'Response Data Over Time'",
+									"            },",
+									"            scales: {",
+									"                xAxes: [{",
+									"                    display: true,",
+									"                    scaleLabel: {",
+									"                        display: true,",
+									"                        labelString: 'Time'",
+									"                    }",
+									"                }],",
+									"                yAxes: [{",
+									"                    display: true,",
+									"                    scaleLabel: {",
+									"                        display: true,",
+									"                        labelString: 'Value'",
+									"                    }",
+									"                }]",
+									"            }",
+									"        }",
+									"",
+									"    });",
+									"",
+									"    // Access the data passed to pm.visualizer.set() from the JavaScript",
+									"    // code of the Visualizer template",
+									"    pm.getData(function (err, value) {",
+									"        lineChart.data.datasets[0].data = value.response.data;",
+									"        lineChart.data.labels = value.response.labels;",
+									"        lineChart.update();",
+									"    });",
+									"",
+									"</script>`;",
+									"",
+									"function constructVisualizerPayload() {",
+									"    var res = pm.response.json();",
+									"    ",
+									"    var visualizerData = {",
+									"        ",
+									"        // Labels take an array of strings",
+									"        labels: [], // Add the labels data here",
+									"        ",
+									"        // Data takes an array of numbers",
+									"        data: [] // Add the data values here",
+									"    };",
+									"",
+									"    return {response: visualizerData};",
+									"}",
+									"",
+									"pm.visualizer.set(template, constructVisualizerPayload());",
+									"",
+									"pm.test(\"Response status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"",
+									"pm.test(\"Response time is in an acceptable range\", function () {",
+									"  pm.expect(pm.response.responseTime).to.be.below(500);",
+									"});",
+									"",
+									"",
+									"pm.test(\"Email is in a valid format\", function () {",
+									"    const responseData = pm.response.json();",
+									"    ",
+									"    pm.expect(responseData.data.attributes).to.be.an('array');",
+									"    responseData.data.attributes.forEach(function(attribute) {",
+									"        pm.expect(attribute.email).to.match(/\\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Z|a-z]{2,}\\b/);",
+									"    });",
+									"});",
+									"",
+									"",
+									"pm.test(\"Name is a non-empty string\", function () {",
+									"  const responseData = pm.response.json();",
+									"",
+									"  pm.expect(responseData.data.attributes).to.be.an('array');",
+									"  responseData.data.attributes.forEach(function(attribute) {",
+									"    pm.expect(attribute.name).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Name should not be empty\");",
+									"  });",
+									"});",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/subscriber/link/:link/event/:event_id",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"subscriber",
+								"link",
+								":link",
+								"event",
+								":event_id"
+							],
+							"variable": [
+								{
+									"key": "link",
+									"value": "ola",
+									"description": "Link"
+								},
+								{
+									"key": "event_id",
+									"value": "1",
+									"description": "Link Event ID"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ranking List",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var template = `",
+									"<canvas id=\"lineChart\" height=\"75\"></canvas>",
+									"",
+									"<script src=\"https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js\"></script> ",
+									"",
+									"<script>",
+									"    var ctx = document.getElementById(\"lineChart\");",
+									"",
+									"    var lineChart = new Chart(ctx, {",
+									"        type: \"line\",",
+									"        data: {",
+									"            labels: [],",
+									"            datasets: [{",
+									"                data: [],",
+									"                ",
+									"                // Change these colours to customize the chart",
+									"                backgroundColor: \"rgba(75, 192, 192, 0.2)\",",
+									"                borderColor: \"rgba(75, 192, 192, 1)\",",
+									"                borderWidth: 1",
+									"            }]",
+									"        },",
+									"        options: {",
+									"            legend: { display: false },",
+									"            title: {",
+									"                display: true,",
+									"                text: 'Response Data Over Time'",
+									"            },",
+									"            scales: {",
+									"                xAxes: [{",
+									"                    display: true,",
+									"                    scaleLabel: {",
+									"                        display: true,",
+									"                        labelString: 'Time'",
+									"                    }",
+									"                }],",
+									"                yAxes: [{",
+									"                    display: true,",
+									"                    scaleLabel: {",
+									"                        display: true,",
+									"                        labelString: 'Value'",
+									"                    }",
+									"                }]",
+									"            }",
+									"        }",
+									"",
+									"    });",
+									"",
+									"    // Access the data passed to pm.visualizer.set() from the JavaScript",
+									"    // code of the Visualizer template",
+									"    pm.getData(function (err, value) {",
+									"        lineChart.data.datasets[0].data = value.response.data;",
+									"        lineChart.data.labels = value.response.labels;",
+									"        lineChart.update();",
+									"    });",
+									"",
+									"</script>`;",
+									"",
+									"function constructVisualizerPayload() {",
+									"    var res = pm.response.json();",
+									"    ",
+									"    var visualizerData = {",
+									"        ",
+									"        // Labels take an array of strings",
+									"        labels: [], // Add the labels data here",
+									"        ",
+									"        // Data takes an array of numbers",
+									"        data: [] // Add the data values here",
+									"    };",
+									"",
+									"    return {response: visualizerData};",
+									"}",
+									"",
+									"pm.visualizer.set(template, constructVisualizerPayload());",
+									"",
+									"pm.test(\"Response status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"  pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"",
+									"",
+									"pm.test(\"Response has the required fields - data, message, and status_code\", function () {",
+									"    const responseData = pm.response.json();",
+									"",
+									"    pm.expect(responseData).to.be.an('object');",
+									"    pm.expect(responseData.data).to.exist;",
+									"    pm.expect(responseData.message).to.exist;",
+									"    pm.expect(responseData.status_code).to.exist;",
+									"});",
+									"",
+									"",
+									"pm.test(\"Count is a non-negative integer\", function () {",
+									"    const responseData = pm.response.json();",
+									"    ",
+									"    pm.expect(responseData.data.count).to.be.a('number');",
+									"    pm.expect(responseData.data.count).to.be.at.least(0);",
+									"});",
+									"",
+									"",
+									"pm.test(\"Validate the structure of the ranking array\", function () {",
+									"    const responseData = pm.response.json();",
+									"    ",
+									"    pm.expect(responseData.data.ranking).to.be.an('array');",
+									"    responseData.data.ranking.forEach(function(item) {",
+									"        pm.expect(item).to.be.an('object');",
+									"        pm.expect(item).to.have.property('count_subscribers');",
+									"        pm.expect(item).to.have.property('link');",
+									"    });",
+									"});",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/subscriber/ranking/event/:event_id",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"subscriber",
+								"ranking",
+								"event",
+								":event_id"
+							],
+							"variable": [
+								{
+									"key": "event_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
